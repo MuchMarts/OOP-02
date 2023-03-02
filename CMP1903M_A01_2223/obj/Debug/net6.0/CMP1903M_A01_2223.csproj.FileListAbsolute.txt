@@ -1,0 +1,15 @@
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.csproj.AssemblyReference.cache
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.GeneratedMSBuildEditorConfig.editorconfig
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.AssemblyInfoInputs.cache
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.AssemblyInfo.cs
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.csproj.CoreCompileInputs.cache
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/CMP1903M_A01_2223
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/CMP1903M_A01_2223.deps.json
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/CMP1903M_A01_2223.runtimeconfig.json
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/CMP1903M_A01_2223.dll
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/ref/CMP1903M_A01_2223.dll
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/bin/Debug/net6.0/CMP1903M_A01_2223.pdb
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.dll
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/ref/CMP1903M_A01_2223.dll
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.pdb
+/home/muchmarts/RiderProjects/CMP1903M_A01_2223/CMP1903M_A01_2223/obj/Debug/net6.0/CMP1903M_A01_2223.genruntimeconfig.cache
