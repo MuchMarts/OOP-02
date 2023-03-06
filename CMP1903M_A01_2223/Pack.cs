@@ -45,7 +45,7 @@ namespace CMP1903M_A01_2223
         // Format card Value and Suite into a single string for ease of reading
         public static string FormatCardData(Card card)
         {
-            return "Card Value: " + card.Value + " Suite: " + card.Suit;
+            return "Card Value: " + card.Value + " Suite: " + card.TranslateSuit();
         }
         
         // EXTRA METHOD IMPLEMENTED
@@ -153,7 +153,7 @@ namespace CMP1903M_A01_2223
         public static Card Deal()
         {
             // if nextCard is higher than total umber of card [0, 51] then there are no more cards to be dealt from the deck
-            if (_nextCard >= 51)
+            if (_nextCard > 51)
             {
                 Console.WriteLine("No more cards left!");
                 return null;
@@ -166,19 +166,24 @@ namespace CMP1903M_A01_2223
 
         public static Card[] DealCard(int amount)
         {
-            //Deals the number of cards specified by 'amount'
-            Card[] cards = new Card[amount];
-            for (int i = 0; i < amount; i++)
+            // Check wheter amount doesnt exceed amount of cards in pack
+            if (_pack.Length - amount - _nextCard < 0)
             {
-                if (_nextCard > 51)
-                {
-                    Console.WriteLine("No more cards left!");
-                    break;
-                }
-                cards[i] = _pack[_nextCard++];
+                Console.WriteLine("Not enough cards in Pack");
             }
+            else
+            {
+            
+                //Deals the number of cards specified by 'amount'
+                Card[] cards = new Card[amount];
+                for (int i = 0; i < amount; i++)
+                {
+                    cards[i] = _pack[_nextCard++];
+                }
 
-            return cards;
+                return cards;    
+            }
+            return null;
         }
     }
 }
