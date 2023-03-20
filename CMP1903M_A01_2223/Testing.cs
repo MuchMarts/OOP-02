@@ -68,14 +68,24 @@ public class TestingCli: Testing
     {
         while (true)
         {
-            Console.Clear();
             Console.WriteLine("Input a integer 1 to 52 (Amount of card dealt)");
             try
             {
                 var amount = Convert.ToInt32(Console.ReadLine());
                 var c = Pack.DealCard(amount);
+                
+                // Handle error
+                if (c == null)
+                {
+                    Console.WriteLine("ErrEncounter");
+                    continue;
+                }
+                
                 DisplayCardData(c, 2);
                 return;
+
+
+
             }
             catch
             {
