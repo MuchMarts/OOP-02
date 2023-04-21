@@ -1,0 +1,16 @@
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.exe
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.dll.config
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.deps.json
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.runtimeconfig.json
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.dll
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\bin\Debug\net6.0\CMP1903M_A02_2223.pdb
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.csproj.AssemblyReference.cache
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.AssemblyInfoInputs.cache
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.AssemblyInfo.cs
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.csproj.CoreCompileInputs.cache
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.dll
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\refint\CMP1903M_A02_2223.dll
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.pdb
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\CMP1903M_A02_2223.genruntimeconfig.cache
+C:\Users\marti\OneDrive\Dokumenti\Projects\OOP-02\CMP1903M_A02_2223\obj\Debug\net6.0\ref\CMP1903M_A02_2223.dll

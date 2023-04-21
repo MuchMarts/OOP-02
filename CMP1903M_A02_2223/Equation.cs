@@ -30,13 +30,19 @@ class Equation
                 return "Error";
         }
     }
-
+    
+    public void DisplayEquation()
+    {
+        Console.WriteLine(FormatEquation());
+        Console.WriteLine(CalculateEquation(CreateEquation(_cards)));
+    }
+    
     private string FormatEquation()
     {
         string equation = "";
         for (int i = 0; i < _cards.Length; i++)
         {
-            if (i%2 != 0)
+            if (i%2 == 0)
             {
                 equation += $"{_cards[i].Value} ";
             }
@@ -49,7 +55,6 @@ class Equation
         return equation;
     }
 
-
     private List<int> CreateEquation(Card[] cards)
     {
         int len = _cards.Length;
@@ -59,9 +64,10 @@ class Equation
         
         for (int i = 0; i < len; i++)
         {
-            if (i % 2 == 0)
+            if (i % 2 != 0)
             {
                 values.Add(pemdas[_cards[i].Suit - 1]);
+                continue;
             }
             values.Add(_cards[i].Value);
         }
@@ -73,11 +79,11 @@ class Equation
     private int CalculateEquation(List<int> values)
     {
         int len = values.Count;
-        if (len == 1) return values[0];
         
+        if (values.Count < 2) return values[0];
+
         // Amount of calculations to be done
         int steps = (len - 1) / 2;
-        
         
         // Calculate order of operations lower number higher proirity
         List<int> order = new List<int>();
@@ -107,10 +113,8 @@ class Equation
             
         // Calculate step of the equation
         int result = 0;
-            
         switch (smallest)
         {
-
             case 1: 
                 result = values[index*2] * values[index*2 + 2]; 
                 break;
@@ -124,15 +128,13 @@ class Equation
                 result = values[index*2] - values[index*2 + 2];
                 break;
             default:
-                Console.WriteLine("Something Brok!");
+                Console.WriteLine("Something Broke!");
                 break;
         }
             
         // Remove used values and replace with result
-        values.RemoveAt(index*2);
-        values.RemoveAt(index*2);
-        values.Insert(index*2, result);
-        
+        values.RemoveRange(index*2, 2);
+        values[index*2] = result;
         // Recursion
         return CalculateEquation(values);
     }

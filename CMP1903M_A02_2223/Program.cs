@@ -12,15 +12,18 @@ namespace CMP1903M_A02_2223
         {
             Card[] cards = new Card[] { };
             Card c = new Card();
-            c.Value = 1;
+            c.Value = 2;
             c.Suit = 1;
             Card c1 = new Card();
             c1.Value = 1;
-            c1.Suit = 1;
+            c1.Suit = 4;
             Card c2 = new Card();
-            c2.Value = 1;
+            c2.Value = 2;
             c2.Suit = 1;
-
+            Equation test = new Equation(new Card[] { c, c1, c2 });
+            test.DisplayEquation();
+            Console.WriteLine("Success");
+            return;
         }
     }
 }
