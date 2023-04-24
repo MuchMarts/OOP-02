@@ -23,7 +23,7 @@ namespace CMP1903M_A02_2223
             FillPack();
         }
         
-        private static void FillPack()
+        private void FillPack()
         {
             for (int suite = 1; suite <= 4; suite++)
             {
@@ -42,13 +42,13 @@ namespace CMP1903M_A02_2223
         }
 
         // Format card Value and Suite into a single string for ease of reading
-        public static string FormatCardData(Card card)
+        public string FormatCardData(Card card)
         {
             return "Card Value: " + card.Value + " Suite: " + card.TranslateSuit();
         }
         
         // Read all card data in pack 
-        public static void ReadPack()
+        public void ReadPack()
         {
             foreach (Card card in _pack)
             {
@@ -57,7 +57,7 @@ namespace CMP1903M_A02_2223
         }
         
         // Reset pack to original order
-        public static void ResetCardOrder()
+        public void ResetCardOrder()
         {
             FillPack();
             _nextCard = 0;
@@ -65,7 +65,7 @@ namespace CMP1903M_A02_2223
         
         // Implements Fisher Yates shuffle O(n)
         // Uses reference to _pack to shuffle the target objects directly
-        private static void FisherYatesShuffle(ref Card[] cards)
+        private void FisherYatesShuffle(ref Card[] cards)
         {
             Console.WriteLine("Riffle Yates Shuffle");
             
@@ -85,13 +85,13 @@ namespace CMP1903M_A02_2223
         }
         
 
-        public static void Shuffle()
+        public void Shuffle()
         {
             FisherYatesShuffle(ref _pack);
         }
         
         // TODO: Might be useless in the end program
-        public static Card Deal()
+        public Card Deal()
         {
             // if nextCard is higher than total umber of card [0, 51] then there are no more cards to be dealt from the deck
             if (_nextCard > 51)
@@ -105,7 +105,7 @@ namespace CMP1903M_A02_2223
             
         }
 
-        public static Card[] DealCards(int amount)
+        public Card[] DealCards(int amount)
         {
             // Check wheter amount doesnt exceed amount of cards in pack
             if (_pack.Length - amount - _nextCard < 0)

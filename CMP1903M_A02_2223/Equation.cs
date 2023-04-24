@@ -7,11 +7,20 @@ class Equation
     private bool _score;
     private int _speed;
     private int[] pemdas = {3, 4, 1, 2};
+    public float Result { get; private set; }
+    public override string ToString()
+    {
+        return FormatEquation();
+    }
+
     public Equation(Card[] cards)
     {
         _cards = cards;
         _score = false;
         _speed = 0;
+
+        Result = CalculateEquation(CreateEquation(_cards));
+
     }
 
     private string TranslateSuitToType(Card c)
@@ -30,13 +39,7 @@ class Equation
                 return "Error";
         }
     }
-    
-    public void DisplayEquation()
-    {
-        Console.WriteLine(FormatEquation());
-        Console.WriteLine(CalculateEquation(CreateEquation(_cards)));
-    }
-    
+
     private string FormatEquation()
     {
         string equation = "";
