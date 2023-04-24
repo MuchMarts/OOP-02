@@ -7,24 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4590076-6ba5-4e15-a23a-8a529a380ef5" name="Changes" comment="Created Equation object that will hold all equations generated whilst using tutor. And will keep stats about each question.&#10;&#10;NEEDS TESTING">
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.dll.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/CMP1903M_A02_2223.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/CMP1903M_A02_2223.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/CMP1903M_A02_2223.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/CMP1903M_A02_2223.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/CMP1903M_A02_2223.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/ref/CMP1903M_A02_2223.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/obj/Debug/net6.0/refint/CMP1903M_A02_2223.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CMP1903M_A01_2223/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CMP1903M_A01_2223/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M_A02_2223/Equation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/Equation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M_A02_2223/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M_A02_2223/bin/Debug/net6.0/CMP1903M_A02_2223.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="b4590076-6ba5-4e15-a23a-8a529a380ef5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682071614047</updated>
       <workItem from="1682071615304" duration="181000" />
-      <workItem from="1682071985335" duration="6233000" />
+      <workItem from="1682071985335" duration="6504000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed files, removed old code.&#10;Prepped for new assessment.&#10;&#10;TODO: &#10;- Add Tutor equation logic&#10;- Create User interface&#10;- Create a testing class">
       <created>1682072483521</created>
@@ -110,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682077341670</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tested Equation creator.&#10;*** Tested only for 3 cards atm&#10;but currently works as intended&#10;&#10;TODO: &#10;- Create tutor interface&#10;- Create statistics keeper">
+      <created>1682078553913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682078553913</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +112,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Renamed files, removed old code.&#10;Prepped for new assessment.&#10;&#10;TODO: &#10;- Add Tutor equation logic&#10;- Create User interface&#10;- Create a testing class" />
     <MESSAGE value="Created Equation object that will hold all equations generated whilst using tutor. And will keep stats about each question.&#10;&#10;NEEDS TESTING" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Equation object that will hold all equations generated whilst using tutor. And will keep stats about each question.&#10;&#10;NEEDS TESTING" />
+    <MESSAGE value="Tested Equation creator.&#10;*** Tested only for 3 cards atm&#10;but currently works as intended&#10;&#10;TODO: &#10;- Create tutor interface&#10;- Create statistics keeper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tested Equation creator.&#10;*** Tested only for 3 cards atm&#10;but currently works as intended&#10;&#10;TODO: &#10;- Create tutor interface&#10;- Create statistics keeper" />
   </component>
 </project>

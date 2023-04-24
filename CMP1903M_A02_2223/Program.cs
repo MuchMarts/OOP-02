@@ -20,7 +20,13 @@ namespace CMP1903M_A02_2223
             Card c2 = new Card();
             c2.Value = 2;
             c2.Suit = 1;
-            Equation test = new Equation(new Card[] { c, c1, c2 });
+            Card c3 = new Card();
+            c3.Value = 2;
+            c3.Suit = 4;
+            Card c4 = new Card();
+            c4.Value = 2;
+            c4.Suit = 1;
+            Equation test = new Equation(new Card[] { c, c1, c2, c3, c4 });
             test.DisplayEquation();
             Console.WriteLine("Success");
             return;

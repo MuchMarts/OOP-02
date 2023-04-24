@@ -55,12 +55,12 @@ class Equation
         return equation;
     }
 
-    private List<int> CreateEquation(Card[] cards)
+    private List<float> CreateEquation(Card[] cards)
     {
         int len = _cards.Length;
         
         // Array to store results of calculations
-        List<int> values = new List<int>(len);
+        List<float> values = new List<float>(len);
         
         for (int i = 0; i < len; i++)
         {
@@ -76,7 +76,7 @@ class Equation
     }
 
     // Multiplication, Divison, Addition, Subtraction
-    private int CalculateEquation(List<int> values)
+    private float CalculateEquation(List<float> values)
     {
         int len = values.Count;
         
@@ -86,7 +86,7 @@ class Equation
         int steps = (len - 1) / 2;
         
         // Calculate order of operations lower number higher proirity
-        List<int> order = new List<int>();
+        List<float> order = new List<float>();
         for(int i = 0; i < steps; i++)
         {
             order.Add(values[i*2 + 1]);
@@ -101,18 +101,18 @@ class Equation
             if (index == -1)
             { 
                 index = j; 
-                smallest = order[j]; 
+                smallest = (int)order[j]; 
                 continue; 
             } 
             if(smallest > order[j]) 
             { 
-                smallest = order[j]; 
+                smallest = (int)order[j]; 
                 index = j; 
             }
         }
             
         // Calculate step of the equation
-        int result = 0;
+        float result = 0;
         switch (smallest)
         {
             case 1: 
@@ -128,7 +128,7 @@ class Equation
                 result = values[index*2] - values[index*2 + 2];
                 break;
             default:
-                Console.WriteLine("Something Broke!");
+                Console.WriteLine("Equation Calculator Broke!");
                 break;
         }
             
