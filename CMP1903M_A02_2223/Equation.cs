@@ -6,8 +6,13 @@ class Equation
     // Used for Statistics for the user
     private bool _score;
     private int _speed;
-    private int[] pemdas = {3, 4, 1, 2};
-    public float Result { get; private set; }
+    private int[] pemdas = {3, 4, 2, 1};
+
+    public float Result
+    {
+        get; 
+        private set;
+    }
     public override string ToString()
     {
         return FormatEquation();
@@ -112,16 +117,18 @@ class Equation
                 smallest = (int)order[j]; 
                 index = j; 
             }
+            // Optimization
+            if(smallest == 1) break;
         }
             
         // Calculate step of the equation
         float result = 0;
         switch (smallest)
         {
-            case 1: 
+            case 2: 
                 result = values[index*2] * values[index*2 + 2]; 
                 break;
-            case 2:
+            case 1:
                 result = values[index*2] / values[index*2 + 2];
                 break;
             case 3:

@@ -14,7 +14,7 @@ public class Tutor
     {
         foreach (Equation equation in _equations)
         {
-            Console.WriteLine(equation + "= " + equation.Result);
+            Console.WriteLine(equation + "= " + equation.Result.ToString("f1"));
         }
     }
     
@@ -31,6 +31,7 @@ public class Tutor
         Card[] eCards = new Card[cards];
         
         // Deal Cards
+        _pack.ResetCardOrder();
         _pack.Shuffle();
         eCards = _pack.DealCards(cards);
         
