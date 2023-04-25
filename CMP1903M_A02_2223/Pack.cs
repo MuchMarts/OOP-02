@@ -12,11 +12,12 @@ namespace CMP1903M_A02_2223
     {
         private static Card[] _pack;
         private static int _nextCard;
-        
+        private static int maxValue = 301;
+        private static int maxSuit = 4;
         public Pack()
         {
             //Initialise the card pack here
-            _pack = new Card[52];
+            _pack = new Card[maxSuit * maxValue];
             // next_card used to see which card is next in the deck
             _nextCard = 0;
             // Helper function to fill initialized pack object
@@ -25,9 +26,9 @@ namespace CMP1903M_A02_2223
         
         private void FillPack()
         {
-            for (int suite = 1; suite <= 4; suite++)
+            for (int suite = 1; suite <= maxSuit; suite++)
             {
-                for (int value = 1; value <= 13; value++)
+                for (int value = 1; value <= maxValue; value++)
                 {   
                     // creates each card object
                     
@@ -36,7 +37,7 @@ namespace CMP1903M_A02_2223
                     card.Suit = suite;
                     //  adds each card in ascending order
                     // value goes from 1 to 13 then (suite-1)*value is how many cards have allready been added to the array
-                    _pack[value-1 + ((suite - 1) * 13)] = card;
+                    _pack[value-1 + ((suite - 1) * maxValue)] = card;
                 }
             }   
         }
@@ -94,7 +95,7 @@ namespace CMP1903M_A02_2223
         public Card Deal()
         {
             // if nextCard is higher than total umber of card [0, 51] then there are no more cards to be dealt from the deck
-            if (_nextCard > 51)
+            if (_nextCard > maxValue -1)
             {
                 Console.WriteLine("No more cards left!");
                 return null;

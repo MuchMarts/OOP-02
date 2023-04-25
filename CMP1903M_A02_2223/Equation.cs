@@ -44,6 +44,23 @@ class Equation
                 return "Error";
         }
     }
+    private string TranslateIntToType(int c)
+    {
+        switch (c)
+        {
+            case 3:
+                return "+";
+            case 4:
+                return "-";
+            case 2:
+                return "*";
+            case 1:
+                return "/";
+            default:
+                return "Error";
+        }
+    }
+
 
     private string FormatEquation()
     {
@@ -65,7 +82,7 @@ class Equation
 
     private List<decimal> CreateEquation(Card[] cards)
     {
-        int len = _cards.Length;
+        int len = cards.Length;
         
         // Array to store results of calculations
         List<decimal> values = new List<decimal>(len);
@@ -74,10 +91,10 @@ class Equation
         {
             if (i % 2 != 0)
             {
-                values.Add(pemdas[_cards[i].Suit - 1]);
+                values.Add(pemdas[cards[i].Suit - 1]);
                 continue;
             }
-            values.Add(_cards[i].Value);
+            values.Add(cards[i].Value);
         }
 
         return values;
@@ -100,8 +117,17 @@ class Equation
             order.Add(values[i*2 + 1]);
         }
         // TODO: Translate all - to + and change all relevant numbers to negative.
+        // Translate - to a negative number and have just + everywhere
+        for (int i = 0; i < len; i++)
+        {
+            if (i%2 == 1 && TranslateIntToType(Convert.ToInt32(values[i])) == "-")
+            {
+                values[i+1] *= -1;
+                values[i] = pemdas[0]; // Substraction is now addition
+            }
+        }
         // Calculate the equation in correct order
-        
+
         int smallest = -1;
         int index = -1;
         for (int j = 0; j < steps; j++)
@@ -141,7 +167,31 @@ class Equation
                 Console.WriteLine("Equation Calculator Broke!");
                 break;
         }
-            
+        
+        // for debuging
+        /*
+        for (int i = 0; i < values.Count; i++)
+        {
+            if (i%2 == 1)
+            {
+                Console.Write(TranslateIntToType((int)values[i])+ " ");
+                continue;
+            }
+            Console.Write(values[i].ToString("f2") + " ");
+        }
+        Console.WriteLine();
+        for (int i = index*2; i < index*2+3; i++)
+        {
+            if (i%2 == 1)
+            {
+                Console.Write(TranslateIntToType((int)values[i])+ " ");
+                continue;
+            }
+            Console.Write(values[i].ToString("f2") + " ");
+        }
+        Console.WriteLine("= " + result.ToString("f2"));
+        */
+        
         // Remove used values and replace with result
         values.RemoveRange(index*2, 2);
         values[index*2] = result;

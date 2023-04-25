@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/muchmarts/.nuget/packages/": {}
+    "C:\\Users\\marti\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/muchmarts/RiderProjects/OOP-02/CMP1903M_A02_2223/CMP1903M_A02_2223.csproj",
+      "projectUniqueName": "C:\\Users\\marti\\OneDrive\\Dokumenti\\Projects\\OOP-02\\CMP1903M_A02_2223\\CMP1903M_A02_2223.csproj",
       "projectName": "CMP1903M_A02_2223",
-      "projectPath": "/home/muchmarts/RiderProjects/OOP-02/CMP1903M_A02_2223/CMP1903M_A02_2223.csproj",
-      "packagesPath": "/home/muchmarts/.nuget/packages/",
-      "outputPath": "/home/muchmarts/RiderProjects/OOP-02/CMP1903M_A02_2223/obj/",
+      "projectPath": "C:\\Users\\marti\\OneDrive\\Dokumenti\\Projects\\OOP-02\\CMP1903M_A02_2223\\CMP1903M_A02_2223.csproj",
+      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marti\\OneDrive\\Dokumenti\\Projects\\OOP-02\\CMP1903M_A02_2223\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/muchmarts/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -49,16 +49,35 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\marti\\.dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

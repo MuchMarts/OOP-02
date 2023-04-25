@@ -13,10 +13,8 @@ namespace CMP1903M_A02_2223
             // Create Tutor object
             Tutor tutor = new Tutor();
             
-            tutor.GenerateEquation(3);
-            tutor.GenerateEquation(5);
-            tutor.GenerateEquation(7);
-            tutor.GenerateEquation(9);
+
+            tutor.GenerateEquation(301);
             
             tutor.ReadEquations();
             

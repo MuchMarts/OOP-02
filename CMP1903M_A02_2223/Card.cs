@@ -44,7 +44,7 @@ namespace CMP1903M_A02_2223
             // Check if card value is [1; 13] if not write to console that err occured
             set
             {
-                if (value is >= 1 and <= 13) _value = value;
+                if (value is >= 1 and <= 301) _value = value;
                 else Console.WriteLine("Error with Card Value");
             }
         }
