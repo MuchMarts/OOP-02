@@ -24,7 +24,7 @@ class Equation
         _score = false;
         _speed = 0;
 
-        Result = CalculateEquation(CreateEquation(_cards));
+        Result = CalculateEquation(InitEquation(_cards));
 
     }
 
@@ -63,7 +63,7 @@ class Equation
         return equation;
     }
 
-    private List<float> CreateEquation(Card[] cards)
+    private List<float> InitEquation(Card[] cards)
     {
         int len = _cards.Length;
         
