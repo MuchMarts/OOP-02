@@ -8,7 +8,7 @@ class Equation
     private int _speed;
     private int[] pemdas = {3, 4, 2, 1};
 
-    public float Result
+    public decimal Result
     {
         get; 
         private set;
@@ -63,12 +63,12 @@ class Equation
         return equation;
     }
 
-    private List<float> CreateEquation(Card[] cards)
+    private List<decimal> CreateEquation(Card[] cards)
     {
         int len = _cards.Length;
         
         // Array to store results of calculations
-        List<float> values = new List<float>(len);
+        List<decimal> values = new List<decimal>(len);
         
         for (int i = 0; i < len; i++)
         {
@@ -84,7 +84,7 @@ class Equation
     }
 
     // Multiplication, Divison, Addition, Subtraction
-    private float CalculateEquation(List<float> values)
+    private decimal CalculateEquation(List<decimal> values)
     {
         int len = values.Count;
         
@@ -94,12 +94,12 @@ class Equation
         int steps = (len - 1) / 2;
         
         // Calculate order of operations lower number higher proirity
-        List<float> order = new List<float>();
+        List<decimal> order = new List<decimal>();
         for(int i = 0; i < steps; i++)
         {
             order.Add(values[i*2 + 1]);
         }
-        
+        // TODO: Translate all - to + and change all relevant numbers to negative.
         // Calculate the equation in correct order
         
         int smallest = -1;
@@ -122,7 +122,7 @@ class Equation
         }
             
         // Calculate step of the equation
-        float result = 0;
+        decimal result = 0;
         switch (smallest)
         {
             case 2: 
