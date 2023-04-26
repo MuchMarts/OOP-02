@@ -11,15 +11,7 @@ namespace CMP1903M_A02_2223
         static void Main(string[] args)
         {
             // Create Tutor object
-            Tutor tutor = new Tutor();
-            
-
-            tutor.GenerateEquation(3);
-            tutor.GenerateEquation(4);
-            tutor.GenerateEquation(5);
-            tutor.GenerateEquation(7);
-            
-            tutor.ReadEquationHistory();
+            CLI test = new CLI();
 
             Console.WriteLine("Success");
         }
