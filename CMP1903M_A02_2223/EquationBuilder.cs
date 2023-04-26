@@ -56,15 +56,7 @@ class EquationBuilder
 
         // Amount of calculations to be done
         int steps = (values.Count - 1) / 2;
-        
-        // Calculate order of operations lower number higher proirity
-        List<decimal> order = new List<decimal>();
-        for(int i = 0; i < steps; i++)
-        {
-            order.Add(values[i*2 + 1]);
-        }
-        
-        // Translate - to a negative number and have just + everywhere
+                // Translate - to a negative number and have just + everywhere
         for (int i = 0; i < values.Count; i++)
         {
             if (i%2 == 1 && pemdasToType[Convert.ToInt32(values[i])-1] == "-")
@@ -74,10 +66,19 @@ class EquationBuilder
             }
         }
         
+        // Calculate order of operations lower number higher proirity
+        List<decimal> order = new List<decimal>();
+        for(int i = 0; i < steps; i++)
+        {
+            order.Add(values[i*2 + 1]);
+        }
+        
+
+        
         // Find next operation
         int smallest = -1;
         int index = -1;
-        int last = -1;    
+        int last = -1;
         for (int j = 0; j < steps; j++)
         {
             if (index == -1)
@@ -95,10 +96,10 @@ class EquationBuilder
             
             // Optimization
             if(smallest == 1) break; //if smallest is division then no need to check for multiplication
-            if (last == (int)order[j]) { smallest = last; break; } //if last is the same as current then can execute last
-            
+            if (last == (int)order[j]) { smallest = (int)order[j]; last = -1; break;
+            } //if last is the same as current then can execute last
             last = (int)order[j];
-
+            
         }
             
         // Calculate step of the equation
@@ -118,6 +119,37 @@ class EquationBuilder
             default:
                 Console.WriteLine("Equation Calculator Broke!");
                 break;
+        }
+
+        bool Debug = false;
+        // for debuging
+        if (Debug)
+        {
+            
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    Console.Write(pemdasToType[(int)values[i]-1] + " ");
+                    continue;
+                }
+
+                Console.Write(values[i].ToString("f2") + " ");
+            }
+            
+            Console.WriteLine();
+            for (int i = index * 2; i < index * 2 + 3; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    Console.Write(pemdasToType[(int)values[i]-1] + " ");
+                    continue;
+                }
+
+                Console.Write(values[i].ToString("f2") + " ");
+            }
+
+            Console.WriteLine("= " + result.ToString("f2"));
         }
         
         values.RemoveRange(index*2, 2);
