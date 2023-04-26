@@ -8,7 +8,7 @@ interface Interfaces
     }
     public interface IEquationBuilder
     {
-        public void CalculateEquation(Card[] cards);
-        public string FormatEquation(Card[] cards);
+        public decimal CalculateEquation();
+        public string FormatEquation();
     }
 }

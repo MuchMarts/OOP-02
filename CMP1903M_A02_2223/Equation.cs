@@ -4,33 +4,30 @@ class Equation: Interfaces.IEquationBuilder
 {
     private Card[] _cards;
     // Used for Statistics for the user
-    private bool _score;
+    public bool Score { get; set; }
     private int _speed;
 
-    public decimal Result
-    {
-        get; 
-        private set;
-    }
+    public decimal Result { get; }
+
     public override string ToString()
     {
-        return FormatEquation(_cards);
+        return FormatEquation();
     }
 
     public Equation(Card[] cards)
     {
         _cards = cards;
-        _score = false;
+        Score = false;
         _speed = 0;
-        CalculateEquation(_cards);
+        Result = CalculateEquation();
     }
     
-    public void CalculateEquation(Card[] cards)
+    public decimal CalculateEquation()
     {
-        Result = EquationBuilder.CalculateEquation(_cards);
+        return EquationBuilder.CalculateEquation(_cards);
     }
    
-    public string FormatEquation(Card[] cards)
+    public string FormatEquation()
     {
         return EquationBuilder.FormatEquation(_cards);
     }

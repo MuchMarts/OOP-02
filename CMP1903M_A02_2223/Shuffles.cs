@@ -4,8 +4,6 @@ class Shuffles
 {
     public static void FisherYatesShuffle(ref Card[] cards)
     {
-        Console.WriteLine("Riffle Yates Shuffle");
-            
         int n = cards.Length;
             
         Random rnd = new Random();

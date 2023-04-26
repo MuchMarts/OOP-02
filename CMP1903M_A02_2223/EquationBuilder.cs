@@ -78,7 +78,7 @@ class EquationBuilder
         // Find next operation
         int smallest = -1;
         int index = -1;
-        int last = -1;
+        //int last = -1;
         for (int j = 0; j < steps; j++)
         {
             if (index == -1)
@@ -96,9 +96,8 @@ class EquationBuilder
             
             // Optimization
             if(smallest == 1) break; //if smallest is division then no need to check for multiplication
-            if (last == (int)order[j]) { smallest = (int)order[j]; last = -1; break;
-            } //if last is the same as current then can execute last
-            last = (int)order[j];
+            //if (last == (int)order[j]) { smallest = (int)order[j]; break;} //if last is the same as current then can execute last
+            //last = (int)order[j];
             
         }
             
@@ -106,15 +105,17 @@ class EquationBuilder
         decimal result = 0;
         switch (smallest)
         {
-            // Substraction is not perfomed. Instead all - are turned into + and the number is made negative
+            case 1:
+                result = values[index*2] / values[index*2 + 2];
+                break; 
             case 2: 
                 result = values[index*2] * values[index*2 + 2]; 
                 break;
-            case 1:
-                result = values[index*2] / values[index*2 + 2];
-                break;
             case 3:
                 result = values[index*2] + values[index*2 + 2];
+                break;
+            case 4:
+                result = values[index*2] - values[index*2 + 2];
                 break;
             default:
                 Console.WriteLine("Equation Calculator Broke!");

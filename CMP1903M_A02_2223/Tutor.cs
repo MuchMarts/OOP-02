@@ -10,33 +10,55 @@ public class Tutor
         _equations = new List<Equation>();
     }
     
-    public void ReadEquations()
+    public void ReadEquationHistory()
     {
         foreach (Equation equation in _equations)
         {
-            Console.WriteLine(equation + "= " + equation.Result.ToString("f1"));
+            Console.WriteLine(equation + "= " + equation.Result.ToString("F2"));
         }
     }
     
-    public void GenerateEquation(int cards)
+    public void GenerateEquation(int cards, bool shuffle = true, bool reset = true)
     {
         // Check if valid ammount of Cards
         if (cards < 3 || cards%2 == 0)
         {
-            Console.WriteLine("Invalid ammount of cards");
+            Console.WriteLine("Invalid amount of cards. Try Again");
             return;
         }
         
-        // Create array of Cards
-        Card[] eCards = new Card[cards];
+
+        // Check if pack needs to be reset or shuffled
+        if (reset)
+        {
+            _pack.ResetCardOrder();
+        }
+        if (shuffle)
+        {
+            _pack.Shuffle();
+        }
         
-        // Deal Cards
-        _pack.ResetCardOrder();
-        _pack.Shuffle();
-        eCards = _pack.DealCards(cards);
+        // Deal and Create array of Cards
+        Card[] eCards = _pack.DealCards(cards);
         
         // Create Equation
         Equation equation = new Equation(eCards);
         _equations.Add(equation);
+    }
+    
+    public bool CheckUserAnswer(string answer)
+    {
+        decimal result = _equations.Last().Result;
+        string strResult = result.ToString("F2");
+        
+        
+        // Check if answer is correct
+        if (answer == strResult)
+        {
+            _equations.Last().Score = true;
+            return true;
+        }
+        
+        return false;
     }
 }

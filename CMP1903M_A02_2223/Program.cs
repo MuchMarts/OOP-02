@@ -14,10 +14,13 @@ namespace CMP1903M_A02_2223
             Tutor tutor = new Tutor();
             
 
-            tutor.GenerateEquation(21);
+            tutor.GenerateEquation(3);
+            tutor.GenerateEquation(4);
+            tutor.GenerateEquation(5);
+            tutor.GenerateEquation(7);
             
-            tutor.ReadEquations();
-            
+            tutor.ReadEquationHistory();
+
             Console.WriteLine("Success");
         }
     }
