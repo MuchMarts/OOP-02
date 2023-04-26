@@ -17,7 +17,12 @@ public class Tutor
             Console.WriteLine(equation + "= " + equation.Result.ToString("F2"));
         }
     }
-    
+
+    public string ReadEquation()
+    {
+        return _equations.Last().ToString();
+    }
+
     public void GenerateEquation(int cards, bool shuffle = true, bool reset = true)
     {
         // Check if valid ammount of Cards

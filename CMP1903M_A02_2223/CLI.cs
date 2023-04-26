@@ -2,7 +2,13 @@
 
 class CLI
 {
+    private Tutor tutor;
+    private int experiment = 3;
     public CLI()
+    { 
+        tutor = new Tutor();   
+    }
+    public void Run()
     {
         //Tutor tutor = new Tutor();
         Intro();
@@ -35,6 +41,55 @@ class CLI
         Console.ReadKey();
         Console.Clear();
     }
+
+    private int GetInput()
+    {
+        Console.WriteLine("Enter a number: ");
+        int input;
+        while (!int.TryParse(Console.ReadLine(), out input))
+        {
+            Console.WriteLine("Invalid Input. Try Again");
+        }
+        return input;
+    }
+    
+    private bool[] EquationSettings()
+    {
+        Console.WriteLine("Default Settings? (Y/N)");
+        bool def = Console.ReadLine().ToLower() == "y";
+        if (def) { return new []{true, true}; }
+        
+        Console.WriteLine("Would you like to shuffle the cards? (Y/N)");
+        bool shuffle = Console.ReadLine().ToLower() == "y";
+        Console.WriteLine("Would you like to reset the cards? (Y/N)");
+        bool reset = Console.ReadLine().ToLower() == "y";
+        
+        return new []{shuffle, reset};
+    }
+
+    private void StartGame(int cards)
+    {
+        bool[] settings = EquationSettings();
+        
+        Console.WriteLine("Generating Equation...");
+        tutor.GenerateEquation(cards, settings[0], settings[1]);
+        Console.WriteLine("Equation Generated!");
+        Console.Clear();
+        
+        Console.WriteLine("Equation: " + tutor.ReadEquation());
+        Console.WriteLine("Enter your answer (separate decimal using , ): ");
+        
+        decimal answer;
+        while (!decimal.TryParse(Console.ReadLine(), out answer))
+        {
+            Console.WriteLine("Invalid Input. Try Again");
+        }
+        
+        bool correct = tutor.CheckUserAnswer(answer.ToString("f2"));
+        Console.WriteLine("Your answer was " + (correct ? "correct" : "incorrect"));
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+    }
     
     private string[] Options()
     {
@@ -43,18 +98,81 @@ class CLI
             "[0] Exit",
             "[1] Normal Difficulty (3)",    
             "[2] Hard Difficulty (5)", 
-            "[3] Experimental Difficulty (Increasing)",
+            "[3] Experimental Difficulty (Increasing Difficulty = " + experiment + ")",
             "[4] Read Equation History",
             "[5] See Statistics",
+            "[6] Reset Experiment Difficulty"
         };
         return options;
     }
     private void Menu()
     {
+        Console.Clear();
         foreach (var opt in Options())
         {
             Console.WriteLine(opt);
         }
+
+        switch (GetInput())
+        {
+            case 0:
+                Exit();
+                return;
+            case 1:
+                Console.Clear();
+                Console.WriteLine("Normal Difficulty");
+                StartGame(3);
+                break;
+            case 2:
+                Console.Clear();
+                Console.WriteLine("Hard Difficulty");
+                StartGame(5);
+                break;
+            case 3:
+                Console.Clear();
+                Console.WriteLine("Experimental Difficulty");
+                StartGame(experiment);
+                experiment += 2;
+                break;
+            case 4:
+                Console.WriteLine("Read Equation History");
+                throw new NotImplementedException();
+                break;
+            case 5:
+                Console.WriteLine("See Statistics");
+                throw new NotImplementedException();
+                break;
+            case 6:
+                Console.Clear();
+                Console.WriteLine("Resetting Experiment Difficulty");
+                experiment = 3;
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+        }
+        
+        Menu();
+    }
+    
+    private string[] ExitMessage()
+    {
+        string[] message =
+        {
+            "Thank you for playing Math Tutor!",
+            "You can find me on Github with the name MuchMarts",
+            "------------------------------------------",
+            "Press any key to exit..."
+        };
+        return message;
+    }
+    
+    private void Exit()
+    {
+        foreach (var line in ExitMessage())
+        {
+            Console.WriteLine(line);
+        }
+        Console.ReadKey();
     }
     
 }

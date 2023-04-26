@@ -12,8 +12,7 @@ namespace CMP1903M_A02_2223
         {
             // Create Tutor object
             CLI test = new CLI();
-
-            Console.WriteLine("Success");
+            test.Run();
         }
     }
 }
