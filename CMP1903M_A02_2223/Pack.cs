@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace CMP1903M_A02_2223
 {
 
-    class Pack
+    class Pack : Interfaces.IShuffle
     {
         private static Card[] _pack;
         private static int _nextCard;
-        private static int maxValue = 301;
+        private static int maxValue = 13;
         private static int maxSuit = 4;
         public Pack()
         {
@@ -64,46 +64,9 @@ namespace CMP1903M_A02_2223
             _nextCard = 0;
         }
         
-        // Implements Fisher Yates shuffle O(n)
-        // Uses reference to _pack to shuffle the target objects directly
-        private void FisherYatesShuffle(ref Card[] cards)
-        {
-            Console.WriteLine("Riffle Yates Shuffle");
-            
-            int n = cards.Length;
-            
-            Random rnd = new Random();
-            Card[] arr = new Card[n];
-            
-            for (int i = 0; i < n; i++)
-            {
-                int j = rnd.Next(i);
-                if (j != i) arr[i] = arr[j];
-                arr[j] = cards[i];
-            }
-
-            cards = arr;
-        }
-        
-
         public void Shuffle()
         {
-            FisherYatesShuffle(ref _pack);
-        }
-        
-        // TODO: Might be useless in the end program
-        public Card Deal()
-        {
-            // if nextCard is higher than total umber of card [0, 51] then there are no more cards to be dealt from the deck
-            if (_nextCard > maxValue -1)
-            {
-                Console.WriteLine("No more cards left!");
-                return null;
-            }
-            
-            Card card = _pack[_nextCard++];
-            return card;
-            
+            Shuffles.FisherYatesShuffle(ref _pack);
         }
 
         public Card[] DealCards(int amount)

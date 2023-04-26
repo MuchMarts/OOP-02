@@ -14,7 +14,7 @@ namespace CMP1903M_A02_2223
             Tutor tutor = new Tutor();
             
 
-            tutor.GenerateEquation(301);
+            tutor.GenerateEquation(51);
             
             tutor.ReadEquations();
             
