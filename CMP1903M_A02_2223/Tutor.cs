@@ -1,6 +1,6 @@
 ﻿namespace CMP1903M_A02_2223;
 
-public class Tutor
+class Tutor
 {
     private Pack _pack;
     private List<Equation> _equations;
@@ -10,12 +10,9 @@ public class Tutor
         _equations = new List<Equation>();
     }
     
-    public void ReadEquationHistory()
+    public List<Equation> GetEquations()
     {
-        foreach (Equation equation in _equations)
-        {
-            Console.WriteLine(equation + "= " + equation.Result.ToString("F2"));
-        }
+        return _equations;
     }
 
     public string ReadEquation()
@@ -56,6 +53,7 @@ public class Tutor
         decimal result = _equations.Last().Result;
         string strResult = result.ToString("F2");
         
+        _equations.Last().UserAnswer = answer;
         
         // Check if answer is correct
         if (answer == strResult)

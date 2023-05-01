@@ -5,6 +5,7 @@ class Equation: Interfaces.IEquationBuilder
     private Card[] _cards;
     // Used for Statistics for the user
     public bool Score { get; set; }
+    public string UserAnswer { get; set; }
     private int _speed;
 
     public decimal Result { get; }

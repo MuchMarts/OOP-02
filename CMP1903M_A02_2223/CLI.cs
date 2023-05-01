@@ -67,28 +67,69 @@ class CLI
         return new []{shuffle, reset};
     }
 
-    private void StartGame(int cards)
+    private bool GameMenu()
+    {
+        Console.WriteLine("Do you want to play again?");
+        Console.WriteLine("[0] Exit to Main Menu");
+        Console.WriteLine("[1] Play Again");
+        while (true)
+        {
+            int input = GetInput();
+            switch (input)
+            {
+                case 0:
+                    return false;
+                case 1:
+                    return true;
+                default:
+                    Console.WriteLine("Input not recognised. Try Again!");
+                    break;
+            }
+        }
+    }
+    
+    private void StartGame(int cards, bool isExperiment = false)
     {
         bool[] settings = EquationSettings();
+        // Flag used to determine if loop should continue
+        bool continueLoop = true;
+        // Flag used to determine second iteration of loop
+        bool flag = false;
         
-        Console.WriteLine("Generating Equation...");
-        tutor.GenerateEquation(cards, settings[0], settings[1]);
-        Console.WriteLine("Equation Generated!");
-        Console.Clear();
-        
-        Console.WriteLine("Equation: " + tutor.ReadEquation());
-        Console.WriteLine("Enter your answer (separate decimal using , ): ");
-        
-        decimal answer;
-        while (!decimal.TryParse(Console.ReadLine(), out answer))
+        // Loop to play game
+        while (continueLoop)
         {
-            Console.WriteLine("Invalid Input. Try Again");
-        }
+            // Check if experimental difficulty and if second iteration
+            if (isExperiment && flag)
+            {
+                experiment += 2;
+                cards = experiment;
+            }
+            flag = true;
+            tutor.GenerateEquation(cards, settings[0], settings[1]);
         
-        bool correct = tutor.CheckUserAnswer(answer.ToString("f2"));
-        Console.WriteLine("Your answer was " + (correct ? "correct" : "incorrect"));
-        Console.WriteLine("Press any key to continue...");
-        Console.ReadKey();
+            Console.Clear();
+        
+            Console.WriteLine("Equation: " + tutor.ReadEquation());
+            Console.WriteLine("Enter your answer (separate decimal using , ): ");
+            decimal answer;
+            
+            // Check if input is valid
+            while (!decimal.TryParse(Console.ReadLine(), out answer))
+            {
+                Console.WriteLine("Invalid Input. Try Again");
+            }
+            
+            // Check if answer is correct
+            bool correct = tutor.CheckUserAnswer(answer.ToString("f2"));
+            Console.WriteLine("Your answer was " + (correct ? "correct" : "incorrect"));
+
+            Console.WriteLine();
+            
+            // Check if user wants to play again
+            continueLoop = GameMenu();
+        }
+
     }
     
     private string[] Options()
@@ -105,6 +146,20 @@ class CLI
         };
         return options;
     }
+
+    private void CurrentHistory()
+    {
+        List<Equation> history = tutor.GetEquations();
+        foreach (var equation in history)
+        {
+            Console.WriteLine("---------");
+            Console.WriteLine(equation + " = " + equation.CalculateEquation().ToString("F2"));
+            Console.WriteLine("User Answer: "+ equation.UserAnswer + " Score: " + (equation.Score ? "Correct" : "Incorrect"));
+        }
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+    }
+    
     private void Menu()
     {
         Console.Clear();
@@ -131,12 +186,11 @@ class CLI
             case 3:
                 Console.Clear();
                 Console.WriteLine("Experimental Difficulty");
-                StartGame(experiment);
-                experiment += 2;
+                StartGame(experiment, true);
                 break;
             case 4:
                 Console.WriteLine("Read Equation History");
-                throw new NotImplementedException();
+                CurrentHistory();
                 break;
             case 5:
                 Console.WriteLine("See Statistics");
