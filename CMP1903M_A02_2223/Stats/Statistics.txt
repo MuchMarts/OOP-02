@@ -1,0 +1,2 @@
+
+Equation completed: 3 Average time: 5,066333333333333s Average score: 100%

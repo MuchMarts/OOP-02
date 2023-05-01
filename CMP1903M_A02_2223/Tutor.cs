@@ -47,6 +47,10 @@ class Tutor
         Equation equation = new Equation(eCards);
         _equations.Add(equation);
     }
+    public void SetTime(long time)
+    {
+        _equations.Last()._speed = time;
+    }
     
     public bool CheckUserAnswer(string answer)
     {

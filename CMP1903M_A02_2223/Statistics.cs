@@ -33,7 +33,7 @@ class Statistics
         // Calculate average score
 
         text += "Equation completed: " + equations.Count;
-        text += " Average time: " + equations.Average(equation => equation._speed);
+        text += " Average time: " + (equations.Average(equation => equation._speed) / 1000).ToString("F2") + "s";
         text += " Average score: " + equations.Average(equation => Convert.ToInt32(equation.Score)) * 100 + "%";
         WriteToFile(text);
     }

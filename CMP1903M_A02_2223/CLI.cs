@@ -1,4 +1,6 @@
-﻿namespace CMP1903M_A02_2223;
+﻿using System.Diagnostics;
+
+namespace CMP1903M_A02_2223;
 
 class CLI
 {
@@ -97,7 +99,8 @@ class CLI
         bool continueLoop = true;
         // Flag used to determine second iteration of loop
         bool flag = false;
-        
+        // Create timer
+        var timer = new Stopwatch();
         // Loop to play game
         while (continueLoop)
         {
@@ -115,15 +118,17 @@ class CLI
             Console.WriteLine("Equation: " + tutor.ReadEquation());
             Console.WriteLine("Enter your answer (separate decimal using , ): ");
             decimal answer;
-            
+            timer.Start();
             // Check if input is valid
             while (!decimal.TryParse(Console.ReadLine(), out answer))
             {
                 Console.WriteLine("Invalid Input. Try Again");
             }
-            
+            timer.Stop();
             // Check if answer is correct
             bool correct = tutor.CheckUserAnswer(answer.ToString("f2"));
+            tutor.SetTime(timer.ElapsedMilliseconds);
+            
             Console.WriteLine("Your answer was " + (correct ? "correct" : "incorrect"));
 
             Console.WriteLine();
