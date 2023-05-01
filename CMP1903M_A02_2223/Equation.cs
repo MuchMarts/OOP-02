@@ -6,7 +6,7 @@ class Equation: Interfaces.IEquationBuilder
     // Used for Statistics for the user
     public bool Score { get; set; }
     public string UserAnswer { get; set; }
-    private int _speed;
+    public int _speed;
 
     public decimal Result { get; }
 

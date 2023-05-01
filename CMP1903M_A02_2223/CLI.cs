@@ -3,10 +3,12 @@
 class CLI
 {
     private Tutor tutor;
+    private Statistics stats;
     private int experiment = 3;
     public CLI()
     { 
         tutor = new Tutor();   
+        stats = new Statistics();
     }
     public void Run()
     {
@@ -194,7 +196,9 @@ class CLI
                 break;
             case 5:
                 Console.WriteLine("See Statistics");
-                throw new NotImplementedException();
+                Console.WriteLine(stats.ReadStats());
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
                 break;
             case 6:
                 Console.Clear();
@@ -222,6 +226,8 @@ class CLI
     
     private void Exit()
     {
+        stats.CalculateStats(tutor.GetEquations());
+        
         foreach (var line in ExitMessage())
         {
             Console.WriteLine(line);
