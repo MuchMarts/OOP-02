@@ -49,7 +49,7 @@ class Tutor
     }
     public void SetTime(long time)
     {
-        _equations.Last()._speed = time;
+        _equations.Last().Speed = time;
     }
     
     public bool CheckUserAnswer(string answer)

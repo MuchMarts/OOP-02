@@ -28,13 +28,13 @@ class Statistics
     
     private void CalculateEquationStats(List<Equation> equations)
     {
-        string text = "\n";
-        // Calculate average time
-        // Calculate average score
+        string text = "";
 
         text += "Equation completed: " + equations.Count;
-        text += " Average time: " + (equations.Average(equation => equation._speed) / 1000).ToString("F2") + "s";
+        text += " Average time: " + (equations.Average(equation => equation.Speed) / 1000).ToString("F2") + "s";
         text += " Average score: " + equations.Average(equation => Convert.ToInt32(equation.Score)) * 100 + "%";
+        text += "\n";
+        
         WriteToFile(text);
     }
 

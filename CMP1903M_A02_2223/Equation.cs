@@ -6,7 +6,7 @@ class Equation: Interfaces.IEquationBuilder
     // Used for Statistics for the user
     public bool Score { get; set; }
     public string UserAnswer { get; set; }
-    public long _speed;
+    public long Speed { get; set; }
 
     public decimal Result { get; }
 
@@ -19,7 +19,7 @@ class Equation: Interfaces.IEquationBuilder
     {
         _cards = cards;
         Score = false;
-        _speed = 0;
+        Speed = 0;
         Result = CalculateEquation();
     }
     
