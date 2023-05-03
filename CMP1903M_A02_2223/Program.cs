@@ -11,8 +11,11 @@ namespace CMP1903M_A02_2223
         static void Main(string[] args)
         {
             // Create Tutor object
-            CLI test = new CLI();
-            test.Run();
+            //CLI test = new CLI();
+           //test.Run();
+           
+           //To test uncomment, can test seperate classes by calling diferent test methods
+           //Testing.Test();
         }
     }
 }

@@ -149,7 +149,8 @@ class CLI
             "[3] Experimental Difficulty (Increasing Difficulty = " + experiment + ")",
             "[4] Read Equation History",
             "[5] See Statistics",
-            "[6] Reset Experiment Difficulty"
+            "[6] Reset Experiment Difficulty",
+            "[7] Run Test"
         };
         return options;
     }
@@ -209,6 +210,13 @@ class CLI
                 Console.Clear();
                 Console.WriteLine("Resetting Experiment Difficulty");
                 experiment = 3;
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+            case 7:
+                Console.Clear();
+                Console.WriteLine("Running Test");
+                Testing.Test();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 break;
