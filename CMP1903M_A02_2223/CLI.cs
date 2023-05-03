@@ -29,11 +29,35 @@ class CLI
             "You will be given a set of cards that create an equation.",
             "You will then be asked to calculate the answer.",
             "If you get it right you will get points",
-            "At the ned you will be able to see your score!",
+            "At the end you will be able to see your score!",
             "Made by: Martins Patjanko",
             "------------------------------------------"
         };
         return message;
+    }
+
+    private string[] HelpMessage()
+    {
+        string[] message =
+        {
+            "You will be given a set of cards that create an equation.",
+            "You will then be asked to calculate the answer.",
+            "If you get it right you will get points",
+            "At the end you will be able to see your score!",
+        };
+            
+        return message;
+    }
+
+    private void Help()
+    {
+        foreach (var line in HelpMessage())
+        {
+            Console.WriteLine(line);
+        }
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+        Console.Clear();
     }
     private void Intro()
     {
@@ -150,7 +174,8 @@ class CLI
             "[4] Read Equation History",
             "[5] See Statistics",
             "[6] Reset Experiment Difficulty",
-            "[7] Run Test"
+            "[7] Run Test",
+            "[8] Help"
         };
         return options;
     }
@@ -219,6 +244,9 @@ class CLI
                 Testing.Test();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
+                break;
+            case 8:
+                Help();
                 break;
         }
         
