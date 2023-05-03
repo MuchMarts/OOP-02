@@ -6,9 +6,4 @@ interface Interfaces
     {
         public void Shuffle();
     }
-    public interface IEquationBuilder
-    {
-        public decimal CalculateEquation();
-        public string FormatEquation();
-    }
 }

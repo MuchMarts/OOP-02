@@ -1,6 +1,6 @@
 ﻿namespace CMP1903M_A02_2223;
 
-class Equation: Interfaces.IEquationBuilder
+class Equation: EquationBuilder
 {
     private Card[] _cards;
     // Used for Statistics for the user
@@ -25,12 +25,12 @@ class Equation: Interfaces.IEquationBuilder
     
     public decimal CalculateEquation()
     {
-        return EquationBuilder.CalculateEquation(_cards);
+        return CalculateEquation(_cards);
     }
    
     public string FormatEquation()
     {
-        return EquationBuilder.FormatEquation(_cards);
+        return FormatEquation(_cards);
     }
     
 }
